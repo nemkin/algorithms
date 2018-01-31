@@ -1,0 +1,89 @@
+				
+	 		
+	 	 	  
+		A Turing Child Computer 
+  
+	
+	The great-grantchild of the great	mathematician	and	computer scientist	Alan	Mathison	
+Turing is	a student at the Sapientia University	(nicknamed	GAMT) and he is studying	--	what	
+else --	Computer	Science.	He became	aware	of the fundamental invention of	his	famous
+great-grandfather -- today called Turing	machine,	--	and he	had an idea to	further develop this
+simple computer.
+The main difference	of	the architecture of his simple	computer is	a 2D	memory cell grid, M	--
+instead of the linear cell structure	of	the old Turing machine --	with an	address pointer	mechanism
+which reflects	the 2D	structure by the possibility of addressing	one	after another only the neighboring	
+cells in	Left, Right,	Up and	Down direction.		The computer has a single	Accumulator	
+register A, which can hold	0	or	positive integer	values,	just like the	memory	cells M.
+A computer program is	a	sequence of instruction codes read	from	a	tape one	by	one
+and are immediately	executed.	The complete instruction set of	this	computer is listed in the	
+table below:
+
+-----------------------------------------------------------------------------------------------------------------------
+Code	Effect/Meaning 	 	 	     		    			 	   	     		    
+-----------------------------------------------------------------------------------------------------------------------
+Start/Stop	 	 	   	     	
+0	start the execution, NOP 
+1	repeat	the	next instruction	3	times
+2	repeat the	next	instruction    	4	times    
+3	stop	the	execution
+
+Set memory/pointer/A
+4	clear	memory,	all memory	cells are set to 0, reset	memory
+5	set memory pointer to default,	reset	address	pointer 
+6	set	Accumulator register A	to	0, reset A  
+7	increment	A, increase the value of	 A	by 1		
+
+Move memory pointer
+8	step	Right, point to the	Right	neighbour	cell    
+9	step 	Up, point	to the  Up	neighbour     	cell
+10	step    Left,	point	to	Left 	neighbour	cell
+11	step 	Down, point to  the 	Down	neighbour    	cell 
+
+Read/Write
+12	write A	to M,	copy the	content of A to the currently	pointed	memory cell   
+13	write A	to the	standard output,	display the	character	codified by the value of	A	(see below)   
+14	write (17^A)(mod	37) to	the	currently pointed memory	location,	well, thereis an arithmetic coprocessor	too:)
+15	read M to A, read	the	content	of the	currently	pointed memory cell	in	the Accumulator   		
+-----------------------------------------------------------------------------------------------------------------------
+
+When the content of A	is	displayed,	each value	is	the	code of	a character from the list
+below in	increasing	order, such that the first	character	has	code 1,	and	the	
+last character	has	code 36.
+
+!@_-+.;?/:ABCDEFGHIJKLMNOPQRSTUVWXYZ
+
+GAMT has a message	to	you, a message displayed by	a program	which he	wrote in the
+machine code	of his computer. Unfortunately, he hid	the	code in a tricky way,	he said,	actually
+we are	seeing it,	without realising	we see it.   		
+
+Can you discover the program	code, and	then write	an emulator of his	computer, run the program,
+and send us	the	message revealed?   			 			 		    	
+	    			 			 	     		    	 	 		
+P.S. A last	minute	hint. We found out that	the	program code is indeed right	here:	it	
+is just	hidden	in this text	file!	The two spacing characters of	this	text has to be converted,	
+Space and	Tab in	1 and	0 respectively,	and read as numbers in base	two,	each group of four is	
+a machine	code. 	So all	we actually	see	and read in this text	file	are just comments for this	
+hidden code!	 	   	     		    			 			 		    		    			 		  		    	
+	 	 
+ 			 	   	        	 
+ 	 	 	   	        	 
+		 	 			 		  		       	 
+ 	 	 	        	 
+ 	 	 	 				  		       	 
+ 	        	 
+			  	   	 	      	 
+		 	 			 	        	 
+ 	 	 	 			 	 		       	 
+ 	 	 		       	 
+			  					 	 	   	        	 
+		 	 		  		       	 
+			  	        	 
+		 	 	 	 	   	        	 
+		 	 			 		       	 
+		 	 	 	      	 
+ 			 			 		  		       	 
+ 		       	 
+ 			 						  	        	 
+ 		       	 
+ 	 				  		       	 
+		  

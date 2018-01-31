@@ -1,0 +1,70 @@
+<html>
+<head><title>B. Corporate Issues</title></head>
+<body>
+<div align="justify">
+
+<h2>B. Corporate Issues</h2>
+<table width=100% border=0 cellpadding=0 cellspacing=0>
+<tr><td align="justify">
+
+<p>
+General Phillip II's army or the phalanx contains r*c warriors organized in a matrix.
+The strength of the warriors is distributed in a very strange way.
+The strength of warrior at position (i,j) is defined as (a * p[i] + b * p[j]) % m where
+p[i] is the i-th prime number (1 is not a prime number!). The first warrior is at position (1,1).
+</p>
+</table>
+<p>He was invited to take part in a competition and he needs to send some group of warriors.
+Due to his great experience he knows that he needs to send warriors which have been close together
+in their battles.
+</p>
+
+<p>A warrior's neighbours are those that are to the left, right, in front or behind him.
+A group of warriors must contain more than one warrior and there must exist a path between all warriors
+by only visiting neighbouring warriors which are also in the group.
+Because a group of warriors requires a lot of teamwork, its strength is defined as the minimum strength of all it's warriors.
+</p>
+
+<p>Return the sum of maximal strength of a group for all sizes of groups (from 2 to r*c inclusive) modulo 10<sup>9</sup>+7,
+meaning the sum of the best group of size 2, plus best group of size 3 etc...
+</p>
+
+<p>Note: One warrior can be selected for multiple groups of different size.</p>
+
+<p>For example, given a = 7, b = 5, m = 5, r = 3, c = 3 (where r and c are the dimensions of the matrix), the solution would be 11. </p>
+
+<h3>Input</h3>
+
+<p>The first line on input contains five integers, a, b, m, r and c</p>
+<p>a - value of parameter a, used for calculating strengths of warriors</p>
+<p>b - value of parameter b, used for calculating strengths of warriors</p>
+<p>m - value of parameter m, used for calculating strengths of warriors</p>
+<p>r - number of rows of the army</p>
+<p>c - number of columns of the army</p>
+
+<h3>Output</h3>
+
+<p>Output the sum of the best group for sizes [2, r*c] modulo 10<sup>9</sup>+7</p>
+
+<h3>Constraints:</h3>
+<p>a,b and m will be between 1 and 200000000 (2*10<sup>9</sup>)</p>
+<p>r and c will be between 2 and 900 inclusive</p>
+<p>All indices are 1-based</p>
+
+<table width=100% border=0 cellpadding=0 cellspacing=0>
+<tr>
+<td valign=top><h3>Example input</h3>
+<pre>
+11 7 7 5 9
+</pre>
+
+<td valign=top><h3>Example output</h3>
+<pre>
+102
+</pre>
+
+</table>
+
+</div>
+</body>
+</html>

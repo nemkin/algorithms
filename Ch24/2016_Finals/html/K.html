@@ -1,0 +1,60 @@
+<html>
+<head><title>K. Tiles</title></head>
+<body>
+<div align="justify">
+
+<h2>K. Tiles</h2>
+<table width=100% border=0 cellpadding=0 cellspacing=0>
+<tr><td align="justify">
+
+We've reached the next level in tile switching challenges. A team of trained programmers and chemical experts arrived at a storage facility to prevent a serious accident. Inside the facility there are different kinds of explosive materials stored in cubic boxes. These chemical have strange properties: each side of each box has a number(between 0 to 3) representing different reaction types.
+If two boxes are next to each other, and the neighbouring sides have the same properties (represented by the same number), then a chain reaction might go off and the world would end.
+We would like to prevent such things, so programmers must come up with an algorithm and idea to save everybody. During the process they have to switch cubes to achieve a space where no neighbouring side has the same colour.
+Note that time is running up, so you have to minimize the number of steps!!
+The objective is that no 3D cube should have sides that have similar colour as the next cube' side touching the examined side. This applies for all 6 sides of every cube.
+
+</table>
+<p>
+
+$$$task
+
+<h3>Input</h3>
+
+<h3>Output</h3>
+
+<table width=100% border=0 cellpadding=0 cellspacing=0>
+<tr>
+<td valign=top><h3>Example input</h3>
+<pre>
+Example input
+2 3 3
+2 1 3
+0 0 2
+1 3 3
+3 2 1
+0 1 3
+2 0 1
+</pre>
+Explanation:
+first row means the upper bound (maximum coordinates in each direction): X = 2, Y = 3, Z = 3
+we have two layers (x=2) each with size 3x3
+others rows represent elements (for example):
+there's a cube at coordinates (1, 1, 1), its value is 2: meaning that this 1x1x1 unit has chemical type 2
+there's a cube at coordinates (1, 1, 2), it's value is 1
+there's a cube at coordinates (1, 2, 1), it's value is 0
+there's a cube at coordinates (2, 1, 1), it's value is 3
+etc.
+
+<td valign=top><h3>Example output</h3>
+<pre>
+Example output(two x,y,z values, you change the first cube with the second):
+1 3 3 1 2 1
+</pre>
+Explanation:
+The cube located at (1, 3, 3) will be switched with the one at  (1, 2, 1) therefore every neighbouring side has different chemicals at the end.
+
+</table>
+
+</div>
+</body>
+</html>

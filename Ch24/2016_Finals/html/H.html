@@ -1,0 +1,59 @@
+<html>
+<head><title>H. High Powers</title></head>
+<body>
+<div align="justify">
+
+<h2>H. High Powers</h2>
+<table width=100% border=0 cellpadding=0 cellspacing=0>
+<tr><td align="justify">
+
+<p>
+Given numbers N and M, find the biggest power of M so that N! is divisible by it.</p>
+
+<p>
+N! represents the factorial notation. Also, N! = N * (N - 1) * (N - 2) * ... 2 * 1.</p>
+</table>
+<p>
+Example:</p>
+<p>Let N = 10 and M = 6. </p>
+
+<p>We know that 10! in fact equals 3628800.</p>
+<p>For the sake of explanation, let us write all of the powers of 6 that divite 10!:</p>
+<p>6<sup>0</sup> = 1, which divides 3628800.</p>
+<p>6<sup>1</sup> = 6, which divides 3628800.</p>
+<p>6<sup>2</sup> = 36, which divides 3628800.</p>
+<p>6<sup>3</sup> = 216, which divides 3628800.</p>
+<p>6<sup>4</sup> = 1296, which divides 3628800.</p>
+<p>6<sup>5</sup> = 7776, which does not divide 3628800.</p>
+
+<p>This means that the highers power of 6 that divides 10! is 4. Thus, the answer is 4.
+
+</p>
+
+<h3>Input</h3>
+
+<p>The first line of input contains one string (1 &le; N.length() &le; 15) - the number N for which we would need to find N! (this in essence means that as a number, 1 &le; N &le; 10<sup>15</sup>). </p>
+
+<p>The second line of input contains an integer (1 &le; M &le; 100), representing the number M.</p>
+
+<h3>Output</h3>
+
+Output the biggest power K of M so that M<sup>K</sup> still divides N!.
+
+<table width=100% border=0 cellpadding=0 cellspacing=0>
+<tr>
+<td valign=top><h3>Example input</h3>
+<pre>
+74
+2
+</pre>
+
+<td valign=top><h3>Example output</h3>
+<pre>
+71
+</pre>
+</table>
+
+</div>
+</body>
+</html>

@@ -1,0 +1,142 @@
+<html>
+<head><title>I. Robbery</title></head>
+<body>
+<div align="justify">
+
+<h2>I. Robbery</h2>
+<table width=100% border=0 cellpadding=0 cellspacing=0>
+<tr><td align="justify">
+
+<p>
+So, you're a robber that enters a bank through its roof. Fortunately (for the owners of the bank at least), you aren't really a good robber so you did not remember to map out the bank beforehand, and thus you know nothing about its construction (or in which room you land in). The bank on the other hand is constructed of a lot of rooms with very big walls in between them - walls you can't possibly go through or break or anything. In each room there are coins (which just so happens you're after and would do anything to get as many of) which are spread out on the ground of the room. Now, since the police alarm goes off the moment you enter, you only have enough time to search through one room and gather the coins in it before you make your grand escape. This means that you won't be able to go to other rooms during your robbery. If given the way the bank is constructed, the positions of the coins in it as well as your starting position (where you enter) you need to find the number of coins you can get before making a run for it. Additionally, you will be given multiple queries in each test case for all of which you need to provide the answer. </p>
+</table>
+<p>
+Details and assumptions:
+</p>
+
+<p>
+The bank will be represented to you as a matrix consisting only of the characters ' . ' and ' * '. ' * ' means that there is a wall in that particular position whereas ' . ' means that there is a free spot (one you can step on and move to).
+</p>
+
+<p>
+Suppose you are currently at a certain spot labeled (x,y). You are allowed to move to spot (x1,y1) if and only if (x,y) and (x1,y1) are adjacent and both have the character  ' . ' on them. This will become clearer as we explain the test cases.
+</p>
+
+<h3>Input</h3>
+
+<p>The first line of input contains four integers, n, m, s and c. </p>
+
+<p>
+n - an integer representing the number of rows of the  bank<br>
+m - an integer representing the number of columns of the bank<br>
+s - an integer representing the number of starting positions (queries) you will be given<br>
+c - an integer representing the number of coins you will be given
+
+<p>
+The following n lines will contain strings that consist of m characters each. The jth character of the ith line means that the point of the bank labeled as (i,j) has that character.</p>
+
+<p>The following c lines will contain a pair of numbers each. The pair x,y means that there is a coin on the point (x,y) in the bank.</p>
+
+<p>The following s lines will contain a pair of numbers each as well. The pair x,y means that the starting point of the given query is the point (x,y) in the bank. </p>
+
+<h3>Output</h3>
+
+<p>
+Your output should be s lines. The ith line should be a solution to the ith query given above.</p>
+
+
+<h3>Constraints:</h3>
+
+<p>
+1 &le; n,m &le; 1000<br>
+1 &le; s &le; min(n*m,100000)<br>
+0 &le; c &le; the number of ' . ' characters in the bank illustration<br>
+Each one of the starting positions is guaranteed to be on a point that is not a wall<br>
+Each one of the coin positions is guaranteed to be on a point that is not a wall<br>
+All indices will be 1-based
+
+<h3>
+Explained example:</h3>
+
+<p>Input:</p>
+
+<p>5 5 10 4</p>
+<pre>
+*****
+*...*
+*..**
+*.*.*
+*****
+
+4 2
+2 2
+2 3
+3 3
+2 4
+4 2
+2 2
+2 3
+2 2
+2 2
+2 4
+3 2
+2 2
+2 2
+
+<p>The output here should be:</p>
+
+4
+4
+4
+4
+4
+4
+4
+4
+4
+4
+4
+</pre>
+<p>
+Let's put a ' C ' in every point where there's a coin. The bank matrix would look something like this:
+
+<pre>
+*  *   *   *  * 
+*  C  C  .  *
+*   .  C  *  *
+*  C  *   .  *
+*  *   *   *  * 
+</pre>
+<p>
+So let's just illustrate the first query. The point where we enter is (2,4). Now from (2,4) we can get only to (2,3), from where we can travel to (3,3) or (2,2) and so on. In short, from (2,4) we can get to the points (2,3), (2,2), (3,2), (3,3) and (4,2). However, this is not the only room in the bank. The point (4,4) is a room on its own due to the fact that there is no way to travel to (4.4) from (2,4). Fortunately, all of our queries are in the room with the coins so that is why all of the answers are 4 (we can get from any point of that room to any other point in that room). If we had (4,4) as a query the answer to that one would be 0, as you can't get to the room with the coins in any way. </p>
+
+
+<table width=100% border=0 cellpadding=0 cellspacing=0>
+<tr>
+<td valign=top><h3>Example input</h3>
+<pre>
+5 6 3 3
+******
+*..*.*
+******
+*....*
+******
+2 3
+2 5
+4 5
+2 2
+2 5
+4 3
+</pre>
+
+<td valign=top><h3>Example output</h3>
+<pre>
+1
+1
+1
+</pre>
+</table>
+
+</div>
+</body>
+</html>

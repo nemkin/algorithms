@@ -1,0 +1,65 @@
+<html>
+<head><title>D. The Vir&aacute;g's flower shop</title></head>
+<body>
+<div align="justify">
+
+<h2>D. The Vir&aacute;g's flower shop</h2>
+<table width=100% border=0 cellpadding=0 cellspacing=0>
+<tr><td align="justify">
+
+You are B&aacute;lint Vir&aacute;g, a grandson of great Zsigmond Vir&aacute;g, owner of the most famous Hungarian flower shop. Zsigmond created this business when he was very young and has been running it by himself ever since. He put his whole heart into making it special and unique - now it attracts both the locals and the tourists visiting the beautiful city of Budapest.<br />
+Zsigmond is planning to retire soon and he wants you to take over the family business from him. You have been helping him for a several weeks now, but you still feel like floristry is a great and mistical art, especially when you carefully observe your grandfather while doing his art. And you are sure that mastering it on the level of your grandfather will take you years of practice.<br /><br />
+</table>
+So today, you came early to the shop, like usually, to clean it up before the first customers will come. Surprisingly, you find a note on the counter, saying:<br />
+<pre>"B&aacute;lint, life is too short and I saw so little of the world... I decided to go to the Florida for a month trip. #yolo Hope you can run the shop without me!!1".</pre>
+
+Hmm.<br /><br />
+
+What is special about your grandfather is that, apart from being a very talented florist, he is also a big fan of riddles. One big riddle, that is definitely the main reason of popularity of Vir&aacute;g's flower shop, is the <b>complicated system of selecting the flowers for bouquettes</b>. Of course, your grandfather didn't share the exact recipe for creating these special bouquets with you (why would he...) but luckily you were a careful observer and figured out that there are some rules and patterns behind how he runs his business.
+<ul>
+<li>The Vir&aacute;g's flower shop is well known to sell <b>a finite number of bouquettes per day</b>. This number is known for your grandfather and it can be named as <i>b</i>.</li>
+<li>Every bouquet consists of <b>different types of flowers</b>. There cannot be e.g. two daisies in one bouquet.</li>
+<li>Every bouquet is <b>unique.</b></li>
+<li>Every bouquet is <b>equal in quantity</b>, e.g. contains the same amount (<i>n</i>) of different type of flowers. </li>
+<li>There are plenty (<i>t</i>) different types of flowers. </li>
+<li>The flowers appear to be distributed throughout the bouquets randomly, but... here's your grandfather's greatest secret and where the magic happens: <b>there is always exactly one common flower type between every two bouquettes sold this very day!</b> How's that possible? Only Zsigmond knows. (And luckily, you, before the first customers come.)</li>
+</ul>
+
+<td> &nbsp;&nbsp; <td align="right">
+<img width=300 alt="Random doge img" src="doge.png">
+<br><font size="-3">http://starecat.com/content/wp-content/uploads/dog-calculating-how-to-carry-a-stick-on-a-bridge.gif</font>
+</table>
+<p>
+
+Your task is to <b>generate the largest possible set of bouquettes that safisfies the above rules</b> with given <i>n</i> and <i>t</i>.
+
+How many bouquettes should be sold that day (<i>b</i>) - it's up to you to figure that out.
+Also, please keep in mind that the solutions with redundant flowers types (ones that are not really used) are not accepted.
+
+<h3>Input</h3>
+Files from 0.in to 9.in contain two numbers: first one is <i>n</i> - number of flowers per bouquet and the second one is <i>t</i> - different types of flowers in total.
+
+<h3>Output</h3>
+
+First line of output contains two numbers - first is <i>b</i> - the total number of bouquettes to be sold that day and the other one is <i>n</i> - number of flowers per bouquet (the same as in input).
+Second line is concatenated list of flowers and bouquettes.
+Different types of flowers should be represented as numbers (e.g. if we have three types of flowers they should be represented as 1, 2 and 3).<br />
+For example, if we have <i>b</i>=3 bouquettes with <i>t</i>=2 types of flowers per card using <i>s</i>=3 different flowers: [1,2], [2,3] and [3,1] we would write the following input:
+
+<table width=100% border=0 cellpadding=0 cellspacing=0>
+<tr>
+<td valign=top><h3>Example input</h3>
+<pre>
+2 3
+</pre>
+
+<td valign=top><h3>Example output</h3>
+<pre>
+3 2
+1 2 2 3 3 1
+</pre>
+</table>
+
+</div>
+</body>
+</html>

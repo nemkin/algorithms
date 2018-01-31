@@ -1,0 +1,11 @@
+A tromino is a polyomino of order 3, that is, a polygon in the plane made of three unit-sized squares connected edge-to-edge.
+When rotations and reflections are not considered to be distinct shapes, there are only two different free trominoes: 
+"I" and "L" (the "L" shape is also called "V"). When rotations are also considered distinct, there are six fixed trominoes: 
+two I and four L shapes. 
+
+Let f(N,M) be the number of ways you can fill a rectangle with size N,M with trominoes. For example f(3,3)=10.
+
+PWD: f(3,14)*f(3,15).
+
+
+

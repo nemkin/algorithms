@@ -1,0 +1,109 @@
+<html>
+<head><title>F. Hexasudoku</title></head>
+<body>
+<div align="justify">
+
+<h2>F. Hexasudoku</h2>
+<table width=100% border=0 cellpadding=0 cellspacing=0>
+<tr><td align="justify">
+
+Rules of hexasudoku:
+<ul>
+	<li>The board is honeycomb-shaped, as seen on the picture on the right. There are 61 cells.</li>
+	<li>Rows and diagonals have different lengths, meaning that there are rows and diagonals that are 5, 6, 7, 8 and 9 cells long.</li>
+	<li>Each row, left diagonal and right diagonal has to contain <b>unique set of numbers.</b></li>
+	<li>Since the rows have varied length, <b>you don't know what numbers are in the row</b> (except from the longest one containing 9 digits). However, there are limited possibilities of numbers than can be present in cells:
+<td> &nbsp;&nbsp; <td align="right">
+<img width=300 alt="Hexasudoku" src="hexasudoku.png">
+</table>
+<pre>
++------------+-------------------------------------------+
+| Row length |         Possible sets of numbers          |
++------------+-------------------------------------------+
+|          9 | 123456789                                 |
+|          8 | 12345678 or 23456789                      |
+|          7 | 1234567 or 2345678 or 3456789             |
+|          6 | 123456 or 234567 or 345678 or 456789      |
+|          5 | 12345 or 23456 or 34567 or 45678 or 56789 |
++------------+-------------------------------------------+
+</pre>
+<p>
+	In other words, the numbers present in shorter lines have to come from a set of consecutive numbers.
+
+
+<ul>
+	<li>Every puzzle has <b>only one</b> proper solution.</li>
+</ul>
+
+<p>
+
+
+Your task is to <b>solve ten hexasudoku boards</b>.
+
+<h3>Input</h3>
+
+In order for input to be easier to process, the real "honeycomb" structure of hexasudoku (as seen on the left) has been simplified to one on the right - no left shifts are present:
+
+<pre>
+    1 2 3 4 5           1 2 3 4 5
+   6 5 4 3 2 1          6 5 4 3 2 1
+  1 2 3 4 5 6 7         1 2 3 4 5 6 7
+ 8 7 6 5 4 3 2 1        8 7 6 5 4 3 2 1
+1 2 3 4 5 6 7 8 9   &gt;   1 2 3 4 5 6 7 8 9
+ 8 7 6 5 4 3 2 1        8 7 6 5 4 3 2 1
+  1 2 3 4 5 6 7         1 2 3 4 5 6 7
+   6 5 4 3 2 1          6 5 4 3 2 1
+    1 2 3 4 5           1 2 3 4 5
+</pre>
+
+The inputs from 0.in to 9.in are in this form. Zeroes mark the empty places.
+
+<h3>Output</h3>
+
+Your output should be formatted exactly the same as the input, but the zeroes should be filled with proper values.
+
+So your final solution (for each hexasudoku board) should look something like that:
+<pre>
+1 2 3 4 5
+6 5 4 3 2 1
+1 2 3 4 5 6 7
+8 7 6 5 4 3 2 1
+1 2 3 4 5 6 7 8 9
+8 7 6 5 4 3 2 1
+1 2 3 4 5 6 7
+6 5 4 3 2 1
+1 2 3 4 5
+</pre>
+
+<table width=100% border=0 cellpadding=0 cellspacing=0>
+<tr>
+<td valign=top><h3>Example input</h3>
+<pre>
+0 0 2 0 0
+3 1 0 0 2 4
+0 0 0 0 0 0 0
+0 0 0 0 0 0 0 0
+0 6 8 0 0 0 7 3 0
+0 0 0 0 0 0 0 0
+0 0 0 0 0 0 0
+0 0 0 0 0 0
+0 0 0 0 0
+</pre>
+
+<td valign=top><h3>Example output</h3>
+<pre>
+5 3 2 4 1
+3 1 5 6 2 4
+2 4 6 7 8 5 3
+1 5 7 8 4 3 6 2
+4 6 8 2 9 1 7 3 5
+2 4 3 6 7 8 5 1
+3 5 7 8 2 6 4
+1 3 6 5 4 2
+5 2 4 1 3
+</pre>
+</table>
+
+</div>
+</body>
+</html>

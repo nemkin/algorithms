@@ -1,0 +1,11 @@
+There are N prisoners standing in a circle and waiting to be executed. 
+The counting out begins at some point (let us call it place 1) in the circle and 
+proceeds around the circle in a fixed direction (place 2,3,4,...). 
+In each step, one prisoner is skipped and the next one is executed. 
+The elimination proceeds around the circle 
+(which is becoming smaller and smaller as the executed people are removed), 
+until only the last person remains, who is given freedom. 
+
+N=10^21
+
+Which place should you choose in the initial circle to survive? 
