@@ -1,0 +1,1 @@
+/usr/bin/c++      CMakeFiles/shm_udp_server_player.dir/server_copy.cpp.o CMakeFiles/shm_udp_server_player.dir/home/nemkin/Algo/Thyssenkrupp/1337_Jarmuvezerles/coding_cup_if/src/config.cpp.o CMakeFiles/shm_udp_server_player.dir/home/nemkin/Algo/Thyssenkrupp/1337_Jarmuvezerles/coding_cup_if/src/PracticalSocket.cpp.o  -o shm_udp_server_player -rdynamic 
