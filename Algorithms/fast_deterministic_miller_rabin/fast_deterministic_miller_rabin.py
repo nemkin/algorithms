@@ -2,6 +2,8 @@ def is_prime(n):
     """
     Deterministic variant of the Miller-Rabin primality test to determine
     whether a given number is prime.
+    
+    Works up to 2^64.
 
     Parameters
     ----------
