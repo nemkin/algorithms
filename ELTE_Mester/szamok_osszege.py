@@ -1,3 +1,5 @@
+# https://github.com/lezsakdomi/elte-mester-data/blob/master/Sz%C3%A1melm%C3%A9leti%20algoritmusok/Sz%C3%A1mok%20%C3%B6sszege/feladat.pdf
+
 import sys
 
 n, x = map(int, input().split(" "))

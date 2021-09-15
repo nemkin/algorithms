@@ -1,3 +1,5 @@
+# https://github.com/lezsakdomi/elte-mester-data/blob/master/Dinamikus%20programoz%C3%A1s/Sz%C3%A1ll%C3%ADt%C3%A1s%20-%20minim%C3%A1lisan%20legjobban%20terhelt%20kamionnal%20**/feladat.pdf
+
 n, k = map(int, input().split(' '))
 s = list(map(int, input().split(' ')))
 
