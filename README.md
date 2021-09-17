@@ -1,2 +1,2 @@
 # algorithms
-Algorithm implementations for competitive programming in C++/Python.
+Algorithms, solutions, implementations for competitive programming in C++/Python.
