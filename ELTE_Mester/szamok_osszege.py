@@ -9,14 +9,10 @@ s = list(map(int, input().split(" ")))
 for i_1 in range(n):
   x_rem = x - s[i_1]
 
-  i_2 = 0
+  i_2 = i_1 + 1
   i_3 = n-1
 
   while True:
-    if i_2 == i_1: # Nem használhatjuk többször ugyanazt a számot
-      i_2 += 1     # Átlépünk rajta
-    if i_3 == i_1: # - || -
-      i_3 -= 1     # - || -
     if i_2 >= i_3: # Ha átlépték egymást a pointerek akkor nincs találat
       break
     sum = s[i_2] + s[i_3]
