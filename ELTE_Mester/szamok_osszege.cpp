@@ -1,4 +1,4 @@
-// https://github.com/lezsakdomi/elte-mester-data/blob/master/Sz%C3%A1melm%C3%A9leti%20algoritmusok/Sz%C3%A1mok%20%C3%B6sszege/feladat.pdf
+// https://github.com/lezsakdomi/elte-mester-data/blob/master/Számelméleti%20algoritmusok/Számok%20összege/feladat.pdf
 // Two pointers technika
 
 #include <iostream>
