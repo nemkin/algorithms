@@ -6,6 +6,7 @@ mod = 998244353
 def inv(n):
   return pow(n, mod-2, mod)
 
+# https://www.geeksforgeeks.org/compute-ncrp-using-fermat-little-theorem/
 def nck(n,r):
   if n < r:
     return 0
