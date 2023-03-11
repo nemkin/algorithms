@@ -1,3 +1,0 @@
-/home/nemkin/Algo/Thyssenkrupp/1337_Jarmuvezerles/coding_cup_if/src/player/CMakeFiles/edit_cache.dir
-/home/nemkin/Algo/Thyssenkrupp/1337_Jarmuvezerles/coding_cup_if/src/player/CMakeFiles/rebuild_cache.dir
-/home/nemkin/Algo/Thyssenkrupp/1337_Jarmuvezerles/coding_cup_if/src/player/CMakeFiles/shm_udp_server_player.dir

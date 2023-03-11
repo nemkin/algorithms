@@ -1,3 +1,0 @@
-In a hotel the rooms are numbered from 1 912 345 667 898 to 9 987 665 432 106 (inclusive). 
-The numbering is going to be replaced. How many '6'-s are needed, 
-if they use '6'-es for the digits '9' as well (turning them upside-down)?
