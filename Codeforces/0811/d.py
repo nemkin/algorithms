@@ -2,75 +2,64 @@ import sys
 
 n, m = map(int, input().split())
 field = [input() for _ in range(n)]
+x, y = 0, 0
+u, d, l, r = 'U', 'D', 'L', 'R'
 
-found = False
-for tx in range(n):
-  for ty in range(m):
-    if field[tx][ty] == 'F':
-      found = True
-      break
-  if found:
-    break
+def direction(mx, my):
+  if mx == -1:
+    return u
+  if mx == 1:
+    return d
+  if my == -1:
+    return l
+  if my == 1:
+    return r
 
-def step(move):
-  print(move)
+def step(mx, my):
+  global x, y, u, d, l, r
+  prevx, prevy = x, y
+  print(direction(mx, my))
   sys.stdout.flush()
   x, y = map(int, input().split())
   x, y = x-1, y-1
-  if x==tx and y == ty:
-    sys.exit()
+  if prevx == x and prevy == y:
+    if mx:
+      u, d = d, u
+    if my:
+      l, r = r, l
+    return step(mx, my)
   return x, y
 
-u = 'U'
-d = 'D'
-l = 'L'
-r = 'R'
-
-if field[0][1] != '*':
-  x, y = step(r)
-  if y == 0:
-    l, r = r, l
-  else:
-    x, y = step(l)
-  while x+1 < n and field[x+1][y] == '*':
-    if y+1 < m and field[x][y+1] == '*':
-      break
-    x, y = step(r)
-  if y+1<m and field[x][y+1] != '*':
-    x, y = step(d)
-    if x == 0:
-      u, d = d, u
-elif field[1][0] != '*':
-  x, y = step(d)
-  if x == 0:
-    u, d = d, u
-  else:
-    x, y = step(u)
-  while y+1 < m and field[x][y+1] == '*':
-    if x+1 < n and field[x+1][y] == '*':
-      break
-    x, y = step(d)
-  if x+1 < n and field[x+1][y] != '*':
-    x, y = step(r)
-    if y == 0:
-      l, r = r, l
-
+stack = [[x,y]]
 visited = [[False for _ in range(m)] for _ in range(n)]
-moves = []
+move = [[['X', 'X'] for _ in range(m)] for _ in range(n)]
 
-def dfs(x, y):
-  visited[x][y] = True
-  if x == tx and y == ty:
-    return True
-  for mx, my, move in [[-1, 0, u], [1, 0, d], [0, -1, l], [0, 1, r]]:
-    if x+mx < 0 or n <= x+mx or y+my < 0 or m <= y+my:
+while stack:
+  cx, cy = stack.pop()
+  print('E  ', cx, cy)
+  if field[cx][cy] == 'F':
+    fx, fy = cx, cy
+    break
+  if visited[cx][cy]:
+    continue
+  visited[cx][cy] = True
+  for mx, my in [[-1, 0], [1, 0], [0, -1], [0, 1]]:
+    print("M ", mx, my)
+    if cx+mx < 0 or n <= cx+mx or cy+my < 0 or m <= cy+my:
       continue
-    if not visited[x+mx][y+my] and field[x+mx][y+my] != '*':
-      if dfs(x+mx, y+my):
-        moves.append(move)
-        return True
-  return False
+    if field[cx+mx][cy+my] == '*':
+      continue
+    print("OK")
+    stack.append([cx+mx, cy+my])
+    print(stack)
+    move[cx+mx][cy+my] = [mx,my]
 
-dfs(x, y)
-for m in reversed(moves):
-  step(m)
+movelist = []
+while not (cx == x and cy == y):
+  mx, my = move[cx][cy]
+  movelist.append([mx, my])
+  cx -= mx
+  cy -= my
+
+for mx, my in reversed(movelist):
+  step(mx, my)
