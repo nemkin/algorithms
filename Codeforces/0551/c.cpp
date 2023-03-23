@@ -1,11 +1,11 @@
 #include <iostream>
 #include <vector>
 
-#ifdef LOCAL
-  #include "../algo/debug.h"
-#else
-  #define debug(...) 42
-#endif
+// #ifdef LOCAL
+//   #include "../../algo/debug.h"
+// #else
+//   #define debug(...) 42
+// #endif
 
 using namespace std;
 
@@ -19,7 +19,7 @@ bool possible(ll time) {
   vector<ll> a = a_in;
 
   int current_position = n-1;
-  while (!a[current_position]) --current_position;
+  while (0 <= current_position && !a[current_position]) --current_position;
 
   int current_person = 0;
 
@@ -29,18 +29,30 @@ bool possible(ll time) {
     ll time_left = time - (current_position + 1);
 
     while (0 < time_left) {
+      // debug("STEP ------");
+      // debug(current_person);
+      // debug(current_position);
+      // debug(time_left);
+      // debug(a);
+
       ll boxes_to_take = min(a[current_position], time_left);
       time_left -= boxes_to_take;
       a[current_position] -= boxes_to_take;
       
-      debug("STEP", current_person, current_position, time_left, boxes_to_take);
-      debug(a);
+      // debug("AFTER");
+      // debug(boxes_to_take);
+      // debug(time_left);
+      // debug(a);
 
-      while (!a[current_position]) --current_position;
+      while (0 <= current_position && !a[current_position]) --current_position;
     }
   }
 
-  return current_position < 0 && current_person < m;
+  // debug("FINAL");
+  // debug(a);
+
+  cout << "YAY" <<endl;
+  return current_position < 0 && current_person <= m;
 }
 
 int main() {
@@ -48,7 +60,9 @@ int main() {
   a_in.resize(n);
   for(int i=0; i<n; ++i) cin>>a_in[i];
 
-  cout << possible(5) << endl;
+  auto cucc = possible(5);
+  // debug("AAAA");
+  cout << cucc << endl;
 
   return 0;
 }
