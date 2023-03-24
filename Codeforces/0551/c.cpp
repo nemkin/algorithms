@@ -49,7 +49,7 @@ bool possible(ll time) {
   for(int i=0; i<n; ++i) {
     // Ha az aktuális játékosnak még van ideje akkor rálép az i. aktuális cellára
     // az előző pozícióból.
-    if (leftover_time) {
+    if (0 < leftover_time) {
       --leftover_time;
     } else {
       // Ha elfogyott az idő akkor először megnézzük, hogy van-e épp doboz a[i]-ben.
@@ -62,6 +62,9 @@ bool possible(ll time) {
       people += 1;
       // Ő i+1 lépés alatt ér ide, ezért time - ennyi ideje van vissza.
       leftover_time = time - (i+1);
+      if (leftover_time <= 0) {
+        return false;
+      }
     }
     // Ha az aktuális embernek van ideje összeszedni a dobozokat,
     // akkor ő szedi össze egyedül.
@@ -74,6 +77,7 @@ bool possible(ll time) {
       // A mostani játékos elveszi amit tud és őt ezzel kivégeztük.
       // A maradék dobozokat új játékosok viszik el.
       ll boxes_for_new_people = a[i] - leftover_time;
+      leftover_time = 0;
       // Az összes új játékos frissen jön ide, nekik ennyi idejük lesz még miután ideértek.
       ll new_people_leftover_time = time - (i+1);
       // Ha a frissen küldött embereknek nincs idejük összeszedni a dobozokat,
@@ -128,6 +132,7 @@ ll binsearch(ll from, ll to) {
 
 int main() {
   cin >> n >> m;
+
   a.resize(n);
   for(int i=0; i<n; ++i) cin >> a[i];
 
@@ -137,7 +142,7 @@ int main() {
   // - Keressük a legkisebbet amire igen a válasz -> bináris keresés a megoldásra.
 
   ll from = 0; // Min lehetséges idő, ha nincsenek dobozok.
-  ll to = accumulate(a.begin(), a.end(), 0) + n + 1; // Max idő, pl. ha 1 ember csinál mindent.
+  ll to = accumulate(a.begin(), a.end(), (ll)0) + n + 1; // Max idő, pl. ha 1 ember csinál mindent.
   ll result = binsearch(from, to);
   cout << result << endl;
   return 0;
