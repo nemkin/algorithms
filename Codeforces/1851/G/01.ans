@@ -1,0 +1,45 @@
+[dsu_parent]: {0, 1, 2, 3, 6, 5, 6}
+[dsu_parent]: {3, 1, 3, 3, 6, 3, 3}
+[dsu_parent]: {3, 1, 3, 3, 6, 3, 3}
+[dsu_parent]: {3, 1, 3, 3, 6, 3, 3}
+[dsu_parent]: {3, 3, 3, 3, 3, 3, 3}
+
+
+Mountains
+i:0 h:1
+i:6 h:1
+i:4 h:2
+i:2 h:3
+i:3 h:4
+i:5 h:4
+i:1 h:5
+
+
+Queries
+i:4 a:0 b:6 e:2 h[a]:1 r:0
+i:0 a:0 b:0 e:3 h[a]:1 r:1
+i:1 a:5 b:1 e:0 h[a]:4 r:0
+i:2 a:3 b:6 e:0 h[a]:4 r:1
+i:3 a:0 b:6 e:4 h[a]:1 r:1
+[dsu_parent]: {0, 1, 2, 3, 0, 5}
+[dsu_parent]: {0, 1, 2, 3, 0, 5}
+[dsu_parent]: {0, 1, 0, 3, 0, 5}
+[dsu_parent]: {0, 1, 0, 1, 0, 1}
+[dsu_parent]: {0, 1, 0, 1, 0, 1}
+
+
+Mountains
+i:5 h:1
+i:3 h:2
+i:0 h:4
+i:4 h:5
+i:2 h:6
+i:1 h:7
+
+
+Queries
+i:0 a:0 b:4 e:1 h[a]:4 r:1
+i:1 a:0 b:2 e:1 h[a]:4 r:0
+i:4 a:5 b:1 e:5 h[a]:1 r:0
+i:3 a:5 b:1 e:6 h[a]:1 r:1
+i:2 a:0 b:1 e:1000 h[a]:4 r:0
