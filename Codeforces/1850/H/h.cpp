@@ -10,41 +10,27 @@ using namespace std;
 
 // Graph
 vector<vector<int>> edges;
-vector<vector<int>> revedges;
-vector<vector<int>> bothedges;
-vector<vector<long long>> revlengths;
-vector<vector<int>> bothlengths;
+vector<vector<long long>> lengths;
 
 // DFS
+long long nextpos;
 vector<bool> visited;
-vector<int> toposort;
+vector<long long> pos;
 
-void dfs(int v) {
+bool dfs(int v) {
   visited[v] = true;
-  for(int u : edges[v]) if(!visited[u]) {
-    dfs(u);
-  }
-  toposort.push_back(v);
-}
-
-// DP
-vector<long long> dp;
-vector<bool> visited2;
-
-bool dpdfs(int v) {
-  if(visited2[v]) return true;
-  visited2[v] = true;
-
-  for(int j=0; j<bothedges[v].size(); ++j) {
-    auto u = bothedges[v][j];
-    auto du = bothlengths[v][j];
-    auto coord = dp[v] + du;
-    if (dp[u] == -1) {
-      dp[u] = coord;
-    } else if (dp[u] != coord)  {
-      return false;
+  for(int i=0; i<edges[v].size(); ++i) {
+    int u = edges[v][i];
+    long long shouldbeat = pos[v] + lengths[v][i];
+    if (visited[u]) {
+      if (pos[u] != shouldbeat) {
+        return false;
+      }
+    } else {
+      pos[u] = shouldbeat;
+      nextpos = max(nextpos, shouldbeat+1);
+      if(!dfs(u)) return false;
     }
-    dpdfs(u);
   }
   return true;
 }
@@ -55,63 +41,35 @@ int main() {
 
   while(t--) {
 
-
     int n,m; cin>>n>>m;
 
-    edges.clear(); edges.resize(n);
+    edges.assign(n, {});
+    lengths.assign(n, {});
 
-    revedges.clear(); revedges.resize(n);
-    revlengths.clear(); revlengths.resize(n);
-
-    bothedges.clear(); bothedges.resize(n);
-    bothlengths.clear(); bothlengths.resize(n);
-
+    nextpos = 0;
     visited.assign(n, false);
-    visited2.assign(n, false);
-
-    toposort.clear();
-
+    pos.assign(n, 0);
+    
     for(int i=0; i<m; ++i) {
       int ai, bi; long long di; cin>>ai>>bi>>di; --ai; --bi;
 
-      if(di < 0) {
-        swap(ai, bi);
-        di *= -1;
-      }
-
       edges[ai].push_back(bi);
-      revedges[bi].push_back(ai);
-      revlengths[bi].push_back(di);
+      lengths[ai].push_back(di);
 
-      
-      bothedges[ai].push_back(bi);
-      bothlengths[ai].push_back(di);
-      bothedges[bi].push_back(ai);
-      bothlengths[bi].push_back(-di);
+      edges[bi].push_back(ai);
+      lengths[bi].push_back(-di);
     }
 
+    bool ok = true;
     for (int i = 0; i < n; ++i) if (!visited[i]) {
-      dfs(i);
-    }
-
-    reverse(toposort.begin(), toposort.end());
-
-    dp.assign(n, -1);
- 
-    bool bad = false;
-    for (int i = 0; i < n; ++i) if (!visited2[i]) {
-      dp[i] = 0;
-      if (!dpdfs(i)) {
-        bad = true;
-        cout << "NO" << endl;
+      pos[i] = nextpos++;
+      if (!dfs(i)) {
+        ok = false;
         break;
       }
     }
 
-    if (!bad) {
-      cout << "YES" << endl;
-    }
-
+    cout << (ok ? "YES" : "NO") << endl;
   }
 
   return 0;
